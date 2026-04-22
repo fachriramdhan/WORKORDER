@@ -267,6 +267,34 @@ The dashboard must show:
 - **DOWNTIME** = machine is stopped with active reason
 - **OFF** = machine is not active and no downtime is open
 
+### Additional Dashboard Widgets
+
+The dashboard should also show:
+
+- Top 5 machines by OEE
+- Top 5 machines by output
+- Top 5 machines by downtime
+- Plant summary cards:
+  - total machine
+  - running
+  - downtime
+  - off
+  - average OEE
+
+#### Top 5 Machine Ranking Rules
+
+The ranking can be based on one selected metric:
+
+- OEE
+- total output
+- lowest downtime
+- highest performance
+
+Default recommendation:
+
+- **Top 5 by OEE** for management visibility
+- Optionally allow filter by date range and shift
+
 ---
 
 ## 10.2 Machine Operation Summary
@@ -283,6 +311,15 @@ When a user clicks a machine, the system opens a detail page showing:
 - Reject count
 - Active downtime information
 - Material usage summary
+- Availability
+- Performance
+- Quality
+- OEE
+- Runtime / uptime / downtime breakdown
+- Cycle summary:
+  - standard cycle
+  - average cycle
+  - last cycle
 
 The page must also provide buttons for:
 
@@ -383,6 +420,9 @@ Reports should include:
 - Downtime summary
 - Material usage summary
 - Daily / shift report
+- OEE summary by machine
+- Top 5 machines by OEE
+- Trend chart by shift / day / date range
 
 ---
 
@@ -395,6 +435,73 @@ Every important action should store:
 - On which machine
 - On which Work Order
 - Old value / new value when applicable
+
+---
+
+## 10.9 OEE Monitoring
+
+The dashboard and machine detail page must also support OEE-related metrics.
+
+### Required Metrics
+
+#### Availability
+
+Suggested fields:
+
+- uptime
+- downtime
+- available (%)
+
+#### Performance
+
+Suggested fields:
+
+- standard cycle
+- average cycle
+- last cycle
+- performance (%)
+
+#### Quality
+
+Suggested fields:
+
+- good qty
+- reject qty
+- quality (%)
+
+#### Overall Equipment Effectiveness
+
+- OEE (%)
+
+### Recommended Calculation Rules
+
+Use one agreed plant definition and keep it consistent across the whole system.
+
+A practical implementation rule is:
+
+- **Availability %** = `runtime / planned_production_time × 100`
+- **Performance %** = `(standard_cycle_time × total_output) / runtime × 100`
+- **Quality %** = `good_qty / total_output × 100`
+- **OEE %** = `Availability × Performance × Quality / 10000`
+
+Where:
+
+- `total_output = good_qty + reject_qty`
+- `runtime` is the actual running time used for production
+- `planned_production_time` is the scheduled production time after applying the plant’s agreed rules
+
+### OEE Detail View Should Show
+
+- Availability percentage
+- Runtime
+- Uptime
+- Downtime
+- Performance percentage
+- Standard cycle
+- Average cycle
+- Last cycle
+- Quality percentage
+- OEE percentage
 
 ---
 
@@ -435,6 +542,8 @@ The dashboard should contain:
 
 - Header with plant / line information
 - Summary cards
+- OEE summary cards
+- Top 5 machine ranking widget
 - Machine grid
 - Last update time
 - Optional quick filters
@@ -610,6 +719,9 @@ Even if the app is MVC, it is recommended to structure the backend with reusable
 - `GET /api/reports/daily`
 - `GET /api/reports/machine-summary`
 - `GET /api/reports/workorder-summary`
+- `GET /api/reports/oee-summary`
+- `GET /api/reports/top-machines`
+- `GET /api/reports/top-machines?metric=oee&dateFrom=YYYY-MM-DD&dateTo=YYYY-MM-DD`
 
 ---
 
@@ -812,7 +924,45 @@ Suggested columns:
 - category
 - is_active
 
+#### Recommended Reason List
+
+- operational downtime
+- connectivity
+- changeover
+- plan downtime
+- call mechanic
+- break
+- external constraints
+- planned maintenance
+- running
+- out of cycle
+- machine off / no schedule
+
 ---
+
+### oee_snapshots
+
+Stores calculated OEE snapshots for reporting and historical analysis.
+
+Suggested columns:
+
+- id
+- machine_id
+- work_order_id
+- snapshot_date
+- runtime_minutes
+- uptime_minutes
+- downtime_minutes
+- availability_pct
+- standard_cycle
+- average_cycle
+- last_cycle
+- performance_pct
+- good_qty
+- reject_qty
+- quality_pct
+- oee_pct
+- created_at
 
 ### users / roles
 
@@ -1075,6 +1225,8 @@ The initial project is considered complete when:
 - User can record downtime.
 - User can manage material transactions.
 - Reports can be generated.
+- OEE summary is available.
+- Top 5 machines can be displayed on dashboard.
 - Data is stored safely in MySQL.
 - System is deployable on IIS.
 
