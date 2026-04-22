@@ -1,106 +1,106 @@
-# Project Brief — Work Order & Machine Monitoring System (MES Light)
+# Brief Proyek — Sistem Work Order & Monitoring Mesin (MES Light)
 
-**Document Type:** Technical Project Brief  
-**Target Platform:** Web-based Manufacturing Execution Support System  
-**Primary Stack:** ASP.NET Core, Bootstrap, MySQL  
-**Version:** 1.0  
-**Status:** Draft for Development
-
----
-
-## 1. Executive Summary
-
-This project is a web-based manufacturing system designed to manage **Work Orders**, monitor **machine status**, record **production output**, capture **rejects and downtime**, and track **material usage** in a manufacturing environment.
-
-The system is intended for use on a shopfloor environment where a large TV display shows machine status and a connected PC/tablet is used for operator input. The system must be simple enough for production use, but structured enough to support industrial requirements such as traceability, audit trail, and scalable future expansion.
+**Tipe Dokumen:** Brief Teknis Proyek  
+**Target Platform:** Sistem monitoring dan eksekusi produksi berbasis web  
+**Stack Utama:** ASP.NET Core, Bootstrap, MySQL  
+**Versi:** 1.0  
+**Status:** Draft untuk Development
 
 ---
 
-## 2. Project Background
+## 1. Ringkasan Eksekutif
 
-In many manufacturing plants, production monitoring is still done manually or semi-digitally. Common issues include:
+Proyek ini adalah sistem manufaktur berbasis web yang dirancang untuk mengelola **Work Order**, memantau **status mesin**, mencatat **output produksi**, merekam **reject dan downtime**, serta melakukan **tracking material** di lingkungan produksi.
 
-- Machine status is not visible in one central view.
-- Work Order execution is not documented consistently.
-- Production output is entered manually without traceability.
-- Reject and downtime data are hard to analyze.
-- Material consumption is not linked properly to production.
-- Supervisors must ask operators for current machine conditions.
-
-This project addresses those issues by creating a **centralized production monitoring and execution system**.
+Sistem akan dipakai di area shopfloor, dengan tampilan utama pada TV besar untuk monitoring mesin, dan PC/tablet untuk input operator. Sistem harus cukup sederhana untuk operasional harian, tetapi tetap terstruktur agar memenuhi kebutuhan industri seperti traceability, audit trail, dan pengembangan lanjutan.
 
 ---
 
-## 3. Problem Statement
+## 2. Latar Belakang Proyek
 
-### 3.1 Current Problems
+Di banyak pabrik manufaktur, monitoring produksi masih dilakukan secara manual atau semi-digital. Masalah yang umum terjadi antara lain:
 
-1. Machine status is scattered across multiple sources.
-2. Work Order information is displayed, but not structured as a production execution flow.
-3. Production input is manual and often inconsistent.
-4. Downtime and reject data are difficult to summarize.
-5. Material tracking is not directly linked to Work Orders.
-6. Historical data is difficult to search and report.
-7. The shopfloor screen is only informative, not fully operational.
+- Status mesin tidak terlihat dalam satu tampilan terpusat.
+- Eksekusi Work Order tidak tercatat secara konsisten.
+- Output produksi diinput manual tanpa traceability yang baik.
+- Data reject dan downtime sulit dianalisis.
+- Konsumsi material tidak terhubung langsung ke Work Order.
+- Supervisor harus bertanya ke operator untuk mengetahui kondisi mesin.
 
-### 3.2 Core Problems to Solve
-
-- How to show all machines in one dashboard with accurate status.
-- How to open one machine and see its current operation summary.
-- How to allow operators to input production, reject, and downtime.
-- How to connect Work Orders with machine execution and material usage.
-- How to structure the system so it is ready for future MES expansion.
+Proyek ini dibuat untuk membangun **sistem monitoring dan eksekusi produksi terpusat** yang dapat dipakai langsung di shopfloor.
 
 ---
 
-## 4. Project Objectives
+## 3. Pernyataan Masalah
 
-1. Build a production dashboard that shows all machines and their status.
-2. Provide a machine detail screen that displays the active Work Order and operation summary.
-3. Enable operator input for production, reject, downtime, and material transactions.
-4. Store all operational data with a proper audit trail.
-5. Design a system structure that is maintainable and scalable.
-6. Use a technology stack that is standard and practical for industrial environments.
+### 3.1 Masalah Saat Ini
+
+1. Status mesin tersebar di beberapa sumber.
+2. Informasi Work Order hanya ditampilkan, belum menjadi alur eksekusi produksi yang rapi.
+3. Input produksi masih manual dan sering tidak konsisten.
+4. Data downtime dan reject sulit direkap.
+5. Tracking material belum terhubung langsung ke Work Order.
+6. Data historis sulit dicari dan dilaporkan.
+7. Tampilan shopfloor hanya informatif, belum sepenuhnya operasional.
+
+### 3.2 Masalah Inti yang Harus Diselesaikan
+
+- Bagaimana menampilkan semua mesin dalam satu dashboard dengan status yang akurat.
+- Bagaimana saat satu mesin diklik, sistem menampilkan operation summary mesin tersebut.
+- Bagaimana operator dapat menginput produksi, reject, dan downtime.
+- Bagaimana Work Order terhubung dengan eksekusi mesin dan material.
+- Bagaimana sistem disusun agar siap berkembang menjadi MES yang lebih lengkap.
 
 ---
 
-## 5. Project Scope
+## 4. Tujuan Proyek
 
-### 5.1 In Scope
+1. Membangun dashboard produksi yang menampilkan semua mesin dan statusnya.
+2. Menyediakan halaman detail mesin yang menampilkan Work Order aktif dan operation summary.
+3. Memungkinkan operator menginput produksi, reject, downtime, dan transaksi material.
+4. Menyimpan semua data operasional dengan audit trail yang jelas.
+5. Merancang sistem yang mudah dipelihara dan mudah dikembangkan.
+6. Menggunakan stack teknologi yang umum dan sesuai standar industri.
 
-- Machine dashboard
-- Machine operation summary
-- Work Order management
-- Production input
-- Reject input
-- Downtime input
-- Material tracking
-- Reporting basics
-- Authentication and role-based access
+---
+
+## 5. Ruang Lingkup Proyek
+
+### 5.1 Termasuk Dalam Scope
+
+- Dashboard mesin
+- Operation summary mesin
+- Manajemen Work Order
+- Input produksi
+- Input reject
+- Input downtime
+- Tracking material
+- Reporting dasar
+- Authentication dan role-based access
 - Audit logging
-- Responsive UI for TV and desktop
+- UI responsif untuk TV dan desktop
 
-### 5.2 Out of Scope for Initial Release
+### 5.2 Tidak Termasuk Pada Rilis Awal
 
-- Direct PLC/SCADA integration
+- Integrasi langsung ke PLC/SCADA
 - Predictive maintenance
-- AI-based analytics
-- Complex ERP synchronization
-- Advanced scheduling engine
-- Mobile app
+- Analitik berbasis AI
+- Sinkronisasi ERP yang kompleks
+- Engine penjadwalan lanjutan
+- Aplikasi mobile
 
-### 5.3 Future Expansion Candidates
+### 5.3 Kandidat Pengembangan Lanjutan
 
-- Real-time machine integration
-- OEE calculation
-- ERP integration
-- Barcode / QR material scanning
-- Notification and alert engine
-- Multi-plant support
+- Integrasi mesin real-time
+- Perhitungan OEE
+- Integrasi ERP
+- Scanning barcode / QR untuk material
+- Sistem notifikasi dan alert
+- Dukungan multi-plant
 
 ---
 
-## 6. Proposed Technology Stack
+## 6. Tech Stack yang Direkomendasikan
 
 ### 6.1 Backend
 
@@ -108,76 +108,76 @@ This project addresses those issues by creating a **centralized production monit
 - **Entity Framework Core**
 - **ASP.NET Core Identity**
 - **SignalR**
-- **Serilog** or built-in structured logging
+- **Serilog** atau structured logging bawaan
 
 ### 6.2 Frontend
 
 - **Bootstrap 5**
 - **Razor Views**
-- Optional: **Chart.js** for summary charts
-- Optional: **JavaScript / jQuery** for interaction helpers
+- Opsional: **Chart.js** untuk grafik ringkasan
+- Opsional: **JavaScript / jQuery** untuk interaksi sederhana
 
 ### 6.3 Database
 
 - **MySQL 8.x**
 
-### 6.4 Supporting Tools
+### 6.4 Tools Pendukung
 
 - Visual Studio
 - Git + GitHub
 - MySQL Workbench
-- Postman or Swagger for API testing
-- Figma or similar for UI mockups
-- IIS for deployment
-- Windows Server for production hosting
+- Postman atau Swagger untuk pengujian API
+- Figma atau tools desain UI lain
+- IIS untuk deployment
+- Windows Server untuk production hosting
 
 ---
 
-## 7. System Roles
+## 7. Peran Pengguna
 
 ### 7.1 Admin
 
-Responsibilities:
+Tanggung jawab:
 
-- Manage users and roles
-- Maintain master data
-- Configure system settings
-- View all logs and reports
+- Mengelola user dan role
+- Memelihara master data
+- Mengatur konfigurasi sistem
+- Melihat semua log dan report
 
 ### 7.2 Supervisor / Production Leader
 
-Responsibilities:
+Tanggung jawab:
 
-- Monitor machine status
-- Review Work Orders
-- Validate production progress
-- Review downtime and rejects
+- Memantau status mesin
+- Meninjau Work Order
+- Memvalidasi progress produksi
+- Meninjau downtime dan reject
 
 ### 7.3 Operator
 
-Responsibilities:
+Tanggung jawab:
 
-- View assigned machine
-- Enter production output
-- Record reject
-- Record downtime
-- Select / confirm Work Order
+- Melihat mesin yang ditugaskan
+- Menginput output produksi
+- Mencatat reject
+- Mencatat downtime
+- Memilih / mengonfirmasi Work Order
 
-### 7.4 Engineer / Maintenance (Optional)
+### 7.4 Engineer / Maintenance (Opsional)
 
-Responsibilities:
+Tanggung jawab:
 
-- Review downtime causes
-- Support machine issue resolution
-- Analyze production interruption data
+- Meninjau penyebab downtime
+- Membantu penyelesaian masalah mesin
+- Menganalisis data gangguan produksi
 
 ---
 
-## 8. High-Level System Architecture
+## 8. Arsitektur Sistem Tingkat Tinggi
 
 ```mermaid
 flowchart LR
-    A[TV Dashboard / Shopfloor UI] --> B[ASP.NET Core Web App]
+    A[Layar TV / UI Shopfloor] --> B[Aplikasi Web ASP.NET Core]
     B --> C[Application Services]
     C --> D[Entity Framework Core]
     D --> E[(MySQL Database)]
@@ -189,29 +189,29 @@ flowchart LR
     B --> H[Logging / Audit Trail]
 ```
 
-### Architecture Notes
+### Catatan Arsitektur
 
-- The TV dashboard is only one presentation surface.
-- The actual business rules live in the backend services.
-- SignalR is used to refresh machine status in near real-time.
-- All production actions are stored in the database with timestamps and user identity.
+- Layar TV hanya salah satu media tampilan.
+- Aturan bisnis utama berada di backend service.
+- SignalR digunakan agar status mesin bisa diperbarui nyaris real-time.
+- Semua aktivitas produksi disimpan ke database lengkap dengan timestamp dan identitas user.
 
 ---
 
-## 9. Application Flow
+## 9. Alur Aplikasi
 
-### 9.1 Main Flow
+### 9.1 Alur Utama
 
 ```mermaid
 flowchart TD
     A[Login] --> B[Dashboard]
-    B --> C[Select Machine]
+    B --> C[Pilih Mesin]
     C --> D[Operation Summary]
-    D --> E[Set / Change Work Order]
-    D --> F[Input Production]
+    D --> E[Set / Ganti Work Order]
+    D --> F[Input Produksi]
     D --> G[Input Reject]
     D --> H[Input Downtime]
-    D --> I[Material Transaction]
+    D --> I[Transaksi Material]
     E --> D
     F --> D
     G --> D
@@ -219,234 +219,234 @@ flowchart TD
     I --> D
 ```
 
-### 9.2 Machine Status Flow
+### 9.2 Alur Status Mesin
 
 ```mermaid
 flowchart TD
-    A[Machine State Source] --> B{Is machine active?}
-    B -- Yes --> C[RUNNING]
-    B -- No --> D{Is downtime active?}
-    D -- Yes --> E[DOWNTIME]
-    D -- No --> F[OFF]
+    A[Sumber Status Mesin] --> B{Mesin aktif?}
+    B -- Ya --> C[RUNNING]
+    B -- Tidak --> D{Ada downtime aktif?}
+    D -- Ya --> E[DOWNTIME]
+    D -- Tidak --> F[OFF]
 ```
 
-### 9.3 Operator Workflow
+### 9.3 Alur Kerja Operator
 
 ```mermaid
 flowchart TD
-    A[Operator opens machine page] --> B[See active Work Order]
-    B --> C[Confirm production activity]
-    C --> D[Input good qty]
-    C --> E[Input reject qty]
+    A[Operator membuka halaman mesin] --> B[Lihat Work Order aktif]
+    B --> C[Konfirmasi aktivitas produksi]
+    C --> D[Input qty good]
+    C --> E[Input qty reject]
     C --> F[Start / stop downtime]
-    C --> G[Record material usage]
-    D --> H[Save to production log]
-    E --> I[Save to reject log]
-    F --> J[Save to downtime log]
-    G --> K[Save to material transaction]
+    C --> G[Catat penggunaan material]
+    D --> H[Simpan ke production log]
+    E --> I[Simpan ke reject log]
+    F --> J[Simpan ke downtime log]
+    G --> K[Simpan ke material transaction]
 ```
 
 ---
 
-## 10. Core Features
+## 10. Fitur Inti
 
-## 10.1 Dashboard Overview
+## 10.1 Ringkasan Dashboard
 
-The dashboard must show:
+Dashboard harus menampilkan:
 
-- Machine name
-- Machine status
-- Active Work Order
-- Target vs actual production
-- Quick summary indicators
-- Color-coded condition
+- Nama mesin
+- Status mesin
+- Work Order aktif
+- Target vs actual produksi
+- Indikator ringkas
+- Kondisi mesin dengan warna
 
-### Status Rules
+### Aturan Status
 
-- **RUNNING** = machine is active and producing
-- **DOWNTIME** = machine is stopped with active reason
-- **OFF** = machine is not active and no downtime is open
+- **RUNNING** = mesin aktif dan sedang produksi
+- **DOWNTIME** = mesin berhenti dengan alasan aktif
+- **OFF** = mesin tidak aktif dan tidak ada downtime terbuka
 
-### Additional Dashboard Widgets
+### Widget Tambahan Dashboard
 
-The dashboard should also show:
+Dashboard juga harus menampilkan:
 
-- Top 5 machines by OEE
-- Top 5 machines by output
-- Top 5 machines by downtime
-- Plant summary cards:
-  - total machine
+- Top 5 mesin berdasarkan OEE
+- Top 5 mesin berdasarkan output
+- Top 5 mesin berdasarkan downtime
+- Kartu ringkasan plant:
+  - total mesin
   - running
   - downtime
   - off
   - average OEE
 
-#### Top 5 Machine Ranking Rules
+#### Aturan Ranking Top 5 Mesin
 
-The ranking can be based on one selected metric:
+Ranking dapat didasarkan pada satu metrik yang dipilih:
 
 - OEE
 - total output
-- lowest downtime
-- highest performance
+- downtime terendah
+- performance tertinggi
 
-Default recommendation:
+Rekomendasi default:
 
-- **Top 5 by OEE** for management visibility
-- Optionally allow filter by date range and shift
+- **Top 5 berdasarkan OEE** untuk visibilitas manajemen
+- Opsional filter berdasarkan rentang tanggal dan shift
 
 ---
 
-## 10.2 Machine Operation Summary
+## 10.2 Operation Summary Mesin
 
-When a user clicks a machine, the system opens a detail page showing:
+Saat user mengklik sebuah mesin, sistem membuka halaman detail berisi:
 
 - Work Order ID
 - Toy No
 - Target
 - Part Number
 - Panel
-- Current machine status
-- Production progress
-- Reject count
-- Active downtime information
-- Material usage summary
+- Status mesin saat ini
+- Progress produksi
+- Jumlah reject
+- Informasi downtime aktif
+- Ringkasan penggunaan material
 - Availability
 - Performance
 - Quality
 - OEE
-- Runtime / uptime / downtime breakdown
-- Cycle summary:
+- Rincian runtime / uptime / downtime
+- Rincian cycle:
   - standard cycle
   - average cycle
   - last cycle
 
-The page must also provide buttons for:
+Halaman ini juga harus menyediakan tombol untuk:
 
 - Downtime
 - Reject
 - Work Order
-- Production input
-- Material input
+- Input produksi
+- Input material
 
 ---
 
-## 10.3 Work Order Management
+## 10.3 Manajemen Work Order
 
-Work Order module must support:
+Modul Work Order harus mendukung:
 
-- Create new Work Order
-- Edit Work Order
-- Assign Work Order to machine
-- Close Work Order
-- Reopen / hold Work Order if needed
-- Search by WO number, part number, or machine
+- Membuat Work Order baru
+- Mengubah Work Order
+- Menugaskan Work Order ke mesin
+- Menutup Work Order
+- Membuka kembali / hold Work Order jika diperlukan
+- Pencarian berdasarkan nomor WO, part number, atau mesin
 
-### Work Order Example Fields
+### Contoh Field Work Order
 
-- WO number
+- Nomor WO
 - Toy No
 - Part Number
 - Panel
 - Target quantity
 - Start date
 - End date
-- Machine assignment
+- Assignment mesin
 - Status
 
 ---
 
-## 10.4 Production Input
+## 10.4 Input Produksi
 
-Production module must support:
+Modul produksi harus mendukung:
 
-- Good quantity input
-- Reject quantity input
-- Timestamp recording
-- User recording
-- Machine and WO linkage
-- Shift recording (optional)
+- Input qty good
+- Input qty reject
+- Pencatatan timestamp
+- Pencatatan user
+- Keterkaitan mesin dan WO
+- Pencatatan shift (opsional)
 
-### Rules
+### Aturan
 
-- Good and reject quantities must be non-negative.
-- Production input must always be tied to a machine and active Work Order.
-- Every transaction must be logged.
+- Qty good dan qty reject harus tidak negatif.
+- Input produksi harus selalu terhubung ke mesin dan Work Order aktif.
+- Setiap transaksi wajib dicatat.
 
 ---
 
-## 10.5 Downtime Management
+## 10.5 Manajemen Downtime
 
-Downtime module must support:
+Modul downtime harus mendukung:
 
 - Start downtime
 - End downtime
-- Downtime reason selection
-- Duration calculation
-- Notes if needed
+- Pemilihan reason downtime
+- Perhitungan durasi
+- Catatan tambahan bila diperlukan
 
-### Rules
+### Aturan
 
-- Downtime should be open only once at a time per machine.
-- End time must not be earlier than start time.
-- Reason list should be standardized.
+- Downtime aktif hanya boleh satu pada satu mesin dalam satu waktu.
+- End time tidak boleh lebih kecil dari start time.
+- Daftar reason harus distandarkan.
 
 ---
 
-## 10.6 Material Tracking
+## 10.6 Tracking Material
 
-Material module must support:
+Modul material harus mendukung:
 
-- Issue material to WO
-- Return unused material
-- Record material consumption
-- Optional batch / lot number
-- Optional warehouse reference
+- Issue material ke WO
+- Return material sisa
+- Pencatatan konsumsi material
+- Nomor batch / lot opsional
+- Referensi gudang opsional
 
-### Future Traceability Direction
+### Arah Traceability Masa Depan
 
-- Material lot → WO → machine → finished product
-- This is important for industrial traceability and quality audit.
+- Material lot → WO → mesin → produk jadi
+- Ini penting untuk traceability industri dan audit kualitas.
 
 ---
 
 ## 10.7 Reporting
 
-Reports should include:
+Report yang harus tersedia:
 
-- Production per machine
-- Production per Work Order
-- Reject summary
-- Downtime summary
-- Material usage summary
-- Daily / shift report
-- OEE summary by machine
-- Top 5 machines by OEE
-- Trend chart by shift / day / date range
+- Produksi per mesin
+- Produksi per Work Order
+- Ringkasan reject
+- Ringkasan downtime
+- Ringkasan penggunaan material
+- Report harian / shift
+- Ringkasan OEE per mesin
+- Top 5 mesin berdasarkan OEE
+- Grafik tren per shift / hari / rentang tanggal
 
 ---
 
 ## 10.8 Audit Trail
 
-Every important action should store:
+Setiap aksi penting harus menyimpan:
 
-- Who did it
-- When it happened
-- On which machine
-- On which Work Order
-- Old value / new value when applicable
+- Siapa yang melakukan
+- Kapan terjadi
+- Pada mesin apa
+- Pada Work Order apa
+- Nilai lama / nilai baru jika relevan
 
 ---
 
-## 10.9 OEE Monitoring
+## 10.9 Monitoring OEE
 
-The dashboard and machine detail page must also support OEE-related metrics.
+Dashboard dan halaman detail mesin harus mendukung metrik OEE.
 
-### Required Metrics
+### Metrik yang Dibutuhkan
 
 #### Availability
 
-Suggested fields:
+Field yang disarankan:
 
 - uptime
 - downtime
@@ -454,7 +454,7 @@ Suggested fields:
 
 #### Performance
 
-Suggested fields:
+Field yang disarankan:
 
 - standard cycle
 - average cycle
@@ -463,7 +463,7 @@ Suggested fields:
 
 #### Quality
 
-Suggested fields:
+Field yang disarankan:
 
 - good qty
 - reject qty
@@ -473,126 +473,126 @@ Suggested fields:
 
 - OEE (%)
 
-### Recommended Calculation Rules
+### Aturan Perhitungan yang Direkomendasikan
 
-Use one agreed plant definition and keep it consistent across the whole system.
+Gunakan definisi plant yang disepakati dan konsisten di seluruh sistem.
 
-A practical implementation rule is:
+Implementasi praktis yang umum:
 
 - **Availability %** = `runtime / planned_production_time × 100`
 - **Performance %** = `(standard_cycle_time × total_output) / runtime × 100`
 - **Quality %** = `good_qty / total_output × 100`
 - **OEE %** = `Availability × Performance × Quality / 10000`
 
-Where:
+Dengan:
 
 - `total_output = good_qty + reject_qty`
-- `runtime` is the actual running time used for production
-- `planned_production_time` is the scheduled production time after applying the plant’s agreed rules
+- `runtime` adalah waktu running aktual untuk produksi
+- `planned_production_time` adalah waktu produksi terjadwal setelah mengikuti aturan plant
 
-### OEE Detail View Should Show
+### Detail OEE yang Harus Ditampilkan
 
-- Availability percentage
+- Persentase availability
 - Runtime
 - Uptime
 - Downtime
-- Performance percentage
+- Persentase performance
 - Standard cycle
 - Average cycle
 - Last cycle
-- Quality percentage
-- OEE percentage
+- Persentase quality
+- Persentase OEE
 
 ---
 
-## 11. UI / UX Plan
+## 11. Rencana UI / UX
 
-## 11.1 UI Principles
+## 11.1 Prinsip UI
 
-The interface should be:
+Antarmuka harus:
 
-- Fast to understand
-- Minimal typing
-- Large enough for TV display
-- Easy for operators in production environment
-- Clear color status and strong hierarchy
+- Cepat dipahami
+- Minim typing
+- Ukuran cukup besar untuk layar TV
+- Mudah dipakai operator di area produksi
+- Status jelas dengan hierarki visual yang kuat
 
-## 11.2 Visual Design Direction
+## 11.2 Arah Desain Visual
 
-- Industrial, clean, and functional
-- Avoid excessive decoration
-- Use strong spacing and readable typography
-- Use status colors consistently
-- Use card-based layout for machine tiles
+- Industrial, bersih, dan fungsional
+- Hindari dekorasi berlebihan
+- Gunakan spacing dan tipografi yang jelas
+- Gunakan warna status secara konsisten
+- Layout kartu untuk tile mesin
 
-### Status Color Suggestion
+### Saran Warna Status
 
-- RUNNING: Green
-- DOWNTIME: Red / Orange
-- OFF: Gray
-- WARNING / HOLD: Yellow
+- RUNNING: Hijau
+- DOWNTIME: Merah / Oranye
+- OFF: Abu-abu
+- WARNING / HOLD: Kuning
 
 ---
 
-## 11.3 Layout Plan
+## 11.3 Rencana Layout
 
-### A. Dashboard Page
+### A. Halaman Dashboard
 
-The dashboard should contain:
+Dashboard harus berisi:
 
-- Header with plant / line information
-- Summary cards
-- OEE summary cards
-- Top 5 machine ranking widget
-- Machine grid
-- Last update time
-- Optional quick filters
+- Header dengan informasi plant / line
+- Kartu ringkasan
+- Kartu ringkasan OEE
+- Widget ranking Top 5 mesin
+- Grid mesin
+- Waktu update terakhir
+- Filter cepat opsional
 
-#### Suggested Layout
+#### Contoh Layout
 
 ```mermaid
 flowchart TB
     A[Top Bar / Header]
-    B[Summary Cards]
-    C[Machine Grid]
+    B[Kartu Ringkasan]
+    C[Grid Mesin]
     D[Recent Events / Alerts]
     E[Footer]
 
     A --> B --> C --> D --> E
 ```
 
-### B. Machine Detail Page
+### B. Halaman Detail Mesin
 
-The machine detail page should contain:
+Halaman detail mesin harus berisi:
 
-- Machine header
-- Work Order summary block
-- Production counters
-- Downtime block
-- Reject block
-- Material block
-- Action buttons
+- Header mesin
+- Blok ringkasan Work Order
+- Counter produksi
+- Blok downtime
+- Blok reject
+- Blok material
+- Tombol aksi
 
-#### Suggested Layout
+#### Contoh Layout
 
 ```mermaid
 flowchart TB
-    A[Machine Header]
-    B[Work Order Summary]
-    C[Production Stats]
-    D[Downtime Panel]
-    E[Reject Panel]
-    F[Material Panel]
-    G[Action Buttons]
+    A[Header Mesin]
+    B[Ringkasan Work Order]
+    C[Statistik Produksi]
+    D[Panel Downtime]
+    E[Panel Reject]
+    F[Panel Material]
+    G[Tombol Aksi]
 
     A --> B --> C --> D --> E --> F --> G
 ```
 
 ---
 
-## 11.4 Navigation Plan
+## 11.4 Rencana Navigasi
 
-### Primary Navigation
+### Navigasi Utama
 
 - Dashboard
 - Work Orders
@@ -604,7 +604,7 @@ flowchart TB
 - Users / Roles
 - Settings
 
-### Suggested Navigation Structure
+### Struktur Navigasi yang Disarankan
 
 ```mermaid
 flowchart LR
@@ -626,36 +626,36 @@ flowchart LR
     A --- H
 ```
 
-### Navigation Rules
+### Aturan Navigasi
 
-- Dashboard must be accessible in one click.
-- Machine detail should open from dashboard tile click.
-- Admin menus should only appear for authorized users.
-- On TV display, navigation should be reduced to the essentials.
-
----
-
-## 11.5 Responsive Behavior
-
-- **TV Screen:** dashboard only, large cards, minimal interactions
-- **Desktop PC:** dashboard + detail management + data entry
-- **Tablet:** simplified detail view and action buttons
-- **Mobile (optional):** read-only or limited operator actions
+- Dashboard harus dapat dibuka dalam satu klik.
+- Detail mesin harus terbuka dari klik tile mesin.
+- Menu admin hanya muncul untuk user yang berhak.
+- Pada tampilan TV, navigasi harus dipangkas seminimal mungkin.
 
 ---
 
-## 12. Backend Plan
+## 11.5 Perilaku Responsif
 
-## 12.1 Backend Architecture
+- **Layar TV:** hanya dashboard, kartu besar, interaksi minimal
+- **Desktop PC:** dashboard + manajemen detail + input data
+- **Tablet:** tampilan detail yang disederhanakan dan tombol aksi
+- **Mobile (opsional):** read-only atau aksi operator terbatas
 
-The backend should use a layered architecture:
+---
 
-- **Presentation Layer**: MVC views, controllers
-- **Application Layer**: business services
-- **Domain Layer**: entities and business rules
+## 12. Rencana Backend
+
+## 12.1 Arsitektur Backend
+
+Backend harus menggunakan arsitektur berlapis:
+
+- **Presentation Layer**: view MVC, controller
+- **Application Layer**: business service
+- **Domain Layer**: entity dan business rule
 - **Infrastructure Layer**: EF Core, MySQL, logging, identity
 
-## 12.2 Recommended Backend Modules
+## 12.2 Modul Backend yang Direkomendasikan
 
 1. Authentication & Authorization
 2. Machine Management
@@ -665,16 +665,16 @@ The backend should use a layered architecture:
 6. Downtime Logging
 7. Material Tracking
 8. Reporting
-9. Notification / Real-time Updates
+9. Notification / Real-time Update
 10. Audit Logging
 
 ---
 
-## 12.3 API Plan
+## 12.3 Rencana API
 
-Even if the app is MVC, it is recommended to structure the backend with reusable API-style service boundaries for future expansion.
+Walaupun aplikasi berbasis MVC, backend tetap sebaiknya disusun dengan batas layanan bergaya API agar mudah dikembangkan nanti.
 
-### Machine APIs
+### API Mesin
 
 - `GET /api/machines`
 - `GET /api/machines/{id}`
@@ -682,7 +682,7 @@ Even if the app is MVC, it is recommended to structure the backend with reusable
 - `PUT /api/machines/{id}`
 - `PATCH /api/machines/{id}/status`
 
-### Work Order APIs
+### API Work Order
 
 - `GET /api/workorders`
 - `GET /api/workorders/{id}`
@@ -691,30 +691,30 @@ Even if the app is MVC, it is recommended to structure the backend with reusable
 - `POST /api/workorders/{id}/assign-machine`
 - `POST /api/workorders/{id}/close`
 
-### Production APIs
+### API Produksi
 
 - `POST /api/production`
 - `GET /api/production/machine/{id}`
 - `GET /api/production/workorder/{id}`
 
-### Reject APIs
+### API Reject
 
 - `POST /api/rejects`
 - `GET /api/rejects/machine/{id}`
 
-### Downtime APIs
+### API Downtime
 
 - `POST /api/downtimes/start`
 - `POST /api/downtimes/end`
 - `GET /api/downtimes/machine/{id}`
 
-### Material APIs
+### API Material
 
 - `POST /api/material-transactions`
 - `GET /api/material-transactions/machine/{id}`
 - `GET /api/material-transactions/workorder/{id}`
 
-### Reporting APIs
+### API Report
 
 - `GET /api/reports/daily`
 - `GET /api/reports/machine-summary`
@@ -725,56 +725,57 @@ Even if the app is MVC, it is recommended to structure the backend with reusable
 
 ---
 
-## 12.4 SignalR / Real-Time Plan
+## 12.4 Rencana SignalR / Real-Time
 
-Use SignalR for:
+Gunakan SignalR untuk:
 
-- machine status updates
-- production counter refresh
-- downtime state changes
-- dashboard alerts
+- update status mesin
+- refresh counter produksi
+- perubahan status downtime
+- perubahan Work Order
+- alert dashboard
 
-### Real-Time Event Examples
+### Contoh Event Real-Time
 
-- machine status changed
-- production input submitted
-- downtime started
-- downtime closed
-- work order changed
-
----
-
-## 12.5 Background Jobs
-
-Background services can be used for:
-
-- status recalculation
-- daily summary generation
-- scheduled clean-up
-- data synchronization
-- alert generation
+- status mesin berubah
+- input produksi tersimpan
+- downtime dimulai
+- downtime selesai
+- Work Order diganti
 
 ---
 
-## 13. Database Plan
+## 12.5 Background Job
 
-## 13.1 Database Design Principles
+Background service dapat dipakai untuk:
 
-- Normalize core transaction data
-- Separate master data from transaction data
-- Keep audit fields on all important tables
-- Use consistent naming conventions
-- Index fields that are used in filters and joins
+- recalculation status
+- generate ringkasan harian
+- pembersihan data terjadwal
+- sinkronisasi data
+- generate alert
 
 ---
 
-## 13.2 Core Tables
+## 13. Rencana Database
+
+## 13.1 Prinsip Desain Database
+
+- Normalisasi data transaksi inti
+- Pisahkan master data dan data transaksi
+- Tambahkan field audit di semua tabel penting
+- Gunakan penamaan yang konsisten
+- Tambahkan index pada field yang sering dipakai filter dan join
+
+---
+
+## 13.2 Tabel Inti
 
 ### machines
 
-Stores machine master data.
+Menyimpan master data mesin.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - machine_code
@@ -789,9 +790,9 @@ Suggested columns:
 
 ### work_orders
 
-Stores Work Order master and execution data.
+Menyimpan master dan data eksekusi Work Order.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - wo_number
@@ -809,9 +810,9 @@ Suggested columns:
 
 ### machine_work_orders
 
-Stores machine assignment history.
+Menyimpan histori penugasan mesin.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - machine_id
@@ -826,9 +827,9 @@ Suggested columns:
 
 ### production_logs
 
-Stores good output production transactions.
+Menyimpan transaksi output produksi.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - machine_id
@@ -843,9 +844,9 @@ Suggested columns:
 
 ### reject_logs
 
-Stores reject transactions.
+Menyimpan transaksi reject.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - machine_id
@@ -860,9 +861,9 @@ Suggested columns:
 
 ### downtime_logs
 
-Stores downtime events.
+Menyimpan kejadian downtime.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - machine_id
@@ -879,9 +880,9 @@ Suggested columns:
 
 ### materials
 
-Stores raw material master data.
+Menyimpan master data material.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - material_code
@@ -895,9 +896,9 @@ Suggested columns:
 
 ### material_transactions
 
-Stores material movement.
+Menyimpan pergerakan material.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - material_id
@@ -914,9 +915,9 @@ Suggested columns:
 
 ### downtime_reasons
 
-Stores standardized downtime reasons.
+Menyimpan daftar reason downtime yang distandarkan.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - reason_code
@@ -924,7 +925,7 @@ Suggested columns:
 - category
 - is_active
 
-#### Recommended Reason List
+#### Daftar Reason yang Direkomendasikan
 
 - operational downtime
 - connectivity
@@ -942,9 +943,9 @@ Suggested columns:
 
 ### oee_snapshots
 
-Stores calculated OEE snapshots for reporting and historical analysis.
+Menyimpan snapshot OEE untuk reporting dan analisis histori.
 
-Suggested columns:
+Kolom yang disarankan:
 
 - id
 - machine_id
@@ -966,187 +967,187 @@ Suggested columns:
 
 ### users / roles
 
-Use ASP.NET Core Identity tables for authentication and authorization.
+Gunakan tabel bawaan ASP.NET Core Identity untuk authentication dan authorization.
 
 ---
 
-## 13.3 Relationship Overview
+## 13.3 Gambaran Relasi
 
 ```mermaid
 erDiagram
-    MACHINES ||--o{ MACHINE_WORK_ORDERS : has
-    WORK_ORDERS ||--o{ MACHINE_WORK_ORDERS : assigned_to
-    MACHINES ||--o{ PRODUCTION_LOGS : produces
-    WORK_ORDERS ||--o{ PRODUCTION_LOGS : belongs_to
-    MACHINES ||--o{ REJECT_LOGS : produces
-    WORK_ORDERS ||--o{ REJECT_LOGS : belongs_to
-    MACHINES ||--o{ DOWNTIME_LOGS : has
-    WORK_ORDERS ||--o{ DOWNTIME_LOGS : belongs_to
-    MATERIALS ||--o{ MATERIAL_TRANSACTIONS : moved_in
-    WORK_ORDERS ||--o{ MATERIAL_TRANSACTIONS : consumes
-    MACHINES ||--o{ MATERIAL_TRANSACTIONS : uses
+    MACHINES ||--o{ MACHINE_WORK_ORDERS : memiliki
+    WORK_ORDERS ||--o{ MACHINE_WORK_ORDERS : ditugaskan_ke
+    MACHINES ||--o{ PRODUCTION_LOGS : menghasilkan
+    WORK_ORDERS ||--o{ PRODUCTION_LOGS : terkait
+    MACHINES ||--o{ REJECT_LOGS : menghasilkan
+    WORK_ORDERS ||--o{ REJECT_LOGS : terkait
+    MACHINES ||--o{ DOWNTIME_LOGS : memiliki
+    WORK_ORDERS ||--o{ DOWNTIME_LOGS : terkait
+    MATERIALS ||--o{ MATERIAL_TRANSACTIONS : berpindah
+    WORK_ORDERS ||--o{ MATERIAL_TRANSACTIONS : mengonsumsi
+    MACHINES ||--o{ MATERIAL_TRANSACTIONS : menggunakan
 ```
 
 ---
 
-## 13.4 Database Rules
+## 13.4 Aturan Database
 
-- One active Work Order per machine at a time unless business rules allow otherwise.
-- One open downtime record per machine at a time.
-- All quantity values must be non-negative.
-- Each transaction must have timestamp and user ID.
-- Every status update should be traceable.
-
----
-
-## 14. Business Rules
-
-1. A machine can be **Running**, **Off**, or **Downtime**.
-2. A machine must always have a clear current state.
-3. Production input must be tied to an active Work Order.
-4. Reject input must reference machine and Work Order.
-5. Downtime must have a reason and a time window.
-6. Material issue must be linked to Work Order.
-7. Closing a Work Order should freeze execution data.
-8. Historical records should not be overwritten; they should be appended or versioned.
+- Satu mesin hanya boleh memiliki satu Work Order aktif pada satu waktu, kecuali aturan bisnis mengizinkan.
+- Satu mesin hanya boleh memiliki satu downtime terbuka pada satu waktu.
+- Semua nilai kuantitas harus non-negatif.
+- Setiap transaksi harus memiliki timestamp dan user ID.
+- Setiap update status harus dapat ditelusuri.
 
 ---
 
-## 15. Validation Rules
+## 14. Aturan Bisnis
 
-### Input Validation
-
-- WO number must be unique.
-- Target quantity must be greater than zero.
-- Production and reject quantities must be valid integers.
-- Downtime end time must be greater than start time.
-- Machine assignment must be valid and active.
-- Material quantity cannot exceed current stock unless business rule permits.
-
-### UI Validation
-
-- Disable irrelevant actions when a machine is off.
-- Show warning if no active WO exists.
-- Confirm before closing downtime or WO.
-- Use dropdowns for standardized fields.
+1. Mesin dapat berstatus **Running**, **Off**, atau **Downtime**.
+2. Mesin harus selalu memiliki state aktif yang jelas.
+3. Input produksi harus terhubung ke Work Order aktif.
+4. Input reject harus mereferensikan mesin dan Work Order.
+5. Downtime harus memiliki reason dan rentang waktu.
+6. Issue material harus terhubung ke Work Order.
+7. Saat Work Order ditutup, data eksekusi harus dikunci.
+8. Riwayat tidak boleh di-overwrite; harus ditambahkan atau di-versioning.
 
 ---
 
-## 16. Non-Functional Requirements
+## 15. Aturan Validasi
 
-### Performance
+### Validasi Input
 
-- Dashboard should load quickly.
-- Machine cards should update efficiently.
-- Queries should be indexed for common filters.
+- Nomor WO harus unik.
+- Target quantity harus lebih besar dari nol.
+- Qty produksi dan reject harus berupa integer yang valid.
+- End time downtime harus lebih besar dari start time.
+- Assignment mesin harus valid dan aktif.
+- Qty material tidak boleh melebihi stok saat ini kecuali aturan bisnis mengizinkan.
 
-### Reliability
+### Validasi UI
 
-- Data should not be lost on refresh.
-- Transactions should be saved atomically.
+- Nonaktifkan aksi yang tidak relevan saat mesin off.
+- Tampilkan peringatan jika tidak ada WO aktif.
+- Minta konfirmasi sebelum menutup downtime atau WO.
+- Gunakan dropdown untuk field standar.
+
+---
+
+## 16. Kebutuhan Non-Fungsional
+
+### Performa
+
+- Dashboard harus cepat dibuka.
+- Kartu mesin harus update secara efisien.
+- Query harus diindeks untuk filter umum.
+
+### Keandalan
+
+- Data tidak boleh hilang saat refresh.
+- Transaksi harus disimpan secara atomik.
 
 ### Maintainability
 
-- Code must be modular.
-- Services must be separated from views.
-- Database migrations must be used properly.
+- Kode harus modular.
+- Service harus dipisahkan dari view.
+- Migration database harus digunakan dengan benar.
 
-### Security
+### Keamanan
 
-- Authentication required for operator actions.
-- Role-based access must be enforced.
-- Sensitive actions should be logged.
+- Login wajib untuk aksi operator.
+- Role-based access harus ditegakkan.
+- Aksi sensitif harus dicatat.
 
-### Usability
+### Kemudahan Pakai
 
-- Large controls for production environment.
-- Minimal steps for operator actions.
-- Clear labeling and color usage.
+- Tombol harus besar untuk area produksi.
+- Jumlah langkah operator harus minimal.
+- Label dan warna harus jelas.
 
 ---
 
-## 17. Development Roadmap
+## 17. Roadmap Development
 
-## Phase 1 — Foundation
+## Fase 1 — Fondasi
 
-- Setup ASP.NET Core project
+- Setup project ASP.NET Core
 - Setup MySQL
 - Setup EF Core
 - Setup Identity
-- Setup Bootstrap layout
-- Create base navigation
+- Setup layout Bootstrap
+- Buat navigasi dasar
 
-## Phase 2 — Master Data
+## Fase 2 — Master Data
 
-- Machine CRUD
-- Work Order CRUD
-- Material master
-- Downtime reason master
-- User / role management
+- CRUD mesin
+- CRUD Work Order
+- Master material
+- Master reason downtime
+- Manajemen user / role
 
-## Phase 3 — Execution Core
+## Fase 3 — Core Eksekusi
 
-- Dashboard machine tiles
-- Machine detail page
-- Production input
-- Reject input
-- Downtime input
-- Work Order assignment
+- Tile dashboard mesin
+- Halaman detail mesin
+- Input produksi
+- Input reject
+- Input downtime
+- Assignment Work Order
 
-## Phase 4 — Material Tracking
+## Fase 4 — Tracking Material
 
-- Material transaction screen
-- Material usage by Work Order
-- Material report
+- Layar transaksi material
+- Penggunaan material per Work Order
+- Report material
 
-## Phase 5 — Real-Time and Reporting
+## Fase 5 — Real-Time dan Reporting
 
-- SignalR updates
-- Summary cards
-- Daily report
-- Machine history
-- Work Order summary
+- Update SignalR
+- Kartu ringkasan
+- Report harian
+- Histori mesin
+- Ringkasan Work Order
 
-## Phase 6 — Hardening
+## Fase 6 — Penguatan Sistem
 
-- Validation improvements
-- Audit logs
+- Peningkatan validasi
+- Audit log
 - Exception handling
-- Logging enhancements
-- UAT with production users
+- Peningkatan logging
+- UAT bersama user produksi
 
-## Phase 7 — Deployment
+## Fase 7 — Deployment
 
-- Publish to IIS
-- Production connection string
-- Environment configuration
-- Backup strategy
+- Publish ke IIS
+- Connection string production
+- Konfigurasi environment
+- Strategi backup
 - Monitoring
 
 ---
 
-## 18. Testing Plan
+## 18. Rencana Testing
 
 ### Unit Testing
 
-Test:
+Uji:
 
-- business logic
-- status calculation
-- transaction validation
+- logika bisnis
+- kalkulasi status
+- validasi transaksi
 
 ### Integration Testing
 
-Test:
+Uji:
 
-- database connection
-- CRUD flow
-- Work Order assignment
-- production and downtime saving
+- koneksi database
+- alur CRUD
+- assignment Work Order
+- penyimpanan produksi dan downtime
 
 ### User Acceptance Testing
 
-Test with:
+Uji dengan:
 
 - operator
 - supervisor
@@ -1154,85 +1155,85 @@ Test with:
 
 ### Scenario Testing
 
-- machine running and input production
-- machine downtime start/stop
-- WO change during execution
-- reject logging
-- material transaction flow
+- mesin running dan input produksi
+- mesin downtime start/stop
+- ganti WO saat eksekusi
+- logging reject
+- alur transaksi material
 
 ---
 
-## 19. Deployment Plan
+## 19. Rencana Deployment
 
-### Environment Separation
+### Pemisahan Environment
 
 - Development
 - Staging
 - Production
 
-### Deployment Targets
+### Target Deployment
 
-- IIS on Windows Server
-- SQL / MySQL production server
-- optional reverse proxy if needed
+- IIS pada Windows Server
+- Server MySQL production
+- Reverse proxy opsional jika dibutuhkan
 
-### Production Checklist
+### Checklist Production
 
-- correct connection string
-- logging enabled
-- error page configured
-- database backup scheduled
-- user roles validated
-- health check verified
-
----
-
-## 20. Risks and Mitigation
-
-| Risk                     | Impact               | Mitigation                                             |
-| ------------------------ | -------------------- | ------------------------------------------------------ |
-| Manual input error       | Data inaccuracy      | Validation, clear UI, fewer input fields               |
-| User resistance          | System not used      | Simple UI, training, operator-friendly flow            |
-| Poor data structure      | Hard maintenance     | Clean database schema, layered architecture            |
-| Slow dashboard           | Poor user experience | Indexing, pagination, SignalR refresh only when needed |
-| Undefined business rules | Confusion            | Confirm rules before development                       |
-| Scope creep              | Delayed delivery     | Prioritize core features first                         |
+- connection string benar
+- logging aktif
+- error page dikonfigurasi
+- backup database terjadwal
+- role user divalidasi
+- health check berjalan
 
 ---
 
-## 21. Recommended Design Decisions
+## 20. Risiko dan Mitigasi
 
-1. Start with **manual input first** before machine integration.
-2. Focus on **one machine detail flow** before building advanced reports.
-3. Keep TV dashboard simple and fast.
-4. Use **database-driven status** instead of hardcoded logic.
-5. Build with a layered structure so future expansion is easy.
-6. Keep operator actions to the minimum number of clicks.
-7. Log every important action.
+| Risiko                    | Dampak               | Mitigasi                                         |
+| ------------------------- | -------------------- | ------------------------------------------------ |
+| Human error saat input    | Data tidak akurat    | Validasi, UI sederhana, sedikit field            |
+| User menolak sistem       | Sistem tidak dipakai | UI sederhana, training, alur ramah operator      |
+| Struktur data buruk       | Sulit dirawat        | Schema rapi, layered architecture                |
+| Dashboard lambat          | Pengalaman buruk     | Indexing, pagination, refresh SignalR seperlunya |
+| Aturan bisnis belum jelas | Membingungkan        | Finalisasi aturan sebelum development            |
+| Scope melebar             | Rilis terlambat      | Prioritaskan core feature terlebih dahulu        |
+
+---
+
+## 21. Keputusan Desain yang Direkomendasikan
+
+1. Mulai dari **input manual** dulu sebelum integrasi mesin.
+2. Fokus ke **alur detail satu mesin** sebelum membangun laporan lanjutan.
+3. Dashboard TV dibuat sederhana dan cepat.
+4. Gunakan **status berbasis database** alih-alih logika hardcode.
+5. Bangun dengan struktur berlapis agar mudah dikembangkan.
+6. Kurangi jumlah klik untuk aksi operator.
+7. Catat semua aksi penting.
 
 ---
 
 ## 22. Definition of Done
 
-The initial project is considered complete when:
+Project awal dianggap selesai apabila:
 
-- User can log in.
-- Dashboard shows all machines.
-- User can open a machine detail page.
-- User can assign or view a Work Order.
-- User can input production output.
-- User can input reject data.
-- User can record downtime.
-- User can manage material transactions.
-- Reports can be generated.
-- OEE summary is available.
-- Top 5 machines can be displayed on dashboard.
-- Data is stored safely in MySQL.
-- System is deployable on IIS.
+- User bisa login.
+- Dashboard menampilkan semua mesin.
+- User bisa membuka halaman detail mesin.
+- User bisa assign atau melihat Work Order.
+- User bisa input output produksi.
+- User bisa input reject.
+- User bisa mencatat downtime.
+- User bisa mengelola transaksi material.
+- Report bisa dibuat.
+- Ringkasan OEE tersedia.
+- Top 5 mesin dapat ditampilkan di dashboard.
+- Data tersimpan aman di MySQL.
+- Sistem dapat di-deploy ke IIS.
 
 ---
 
-## 23. Suggested Repository Structure
+## 23. Struktur Repository yang Disarankan
 
 ```text
 /src
@@ -1266,28 +1267,28 @@ The initial project is considered complete when:
 
 ---
 
-## 24. Final Notes
+## 24. Catatan Akhir
 
-This project should be developed as a **production-ready industrial web system**, not just as a prototype. The first release should be simple, stable, and aligned with real operator workflow. Once the core flow is stable, the system can be expanded toward a full MES platform.
+Proyek ini sebaiknya dibangun sebagai **sistem web industri yang siap produksi**, bukan sekadar prototype. Rilis awal harus sederhana, stabil, dan sesuai workflow operator yang benar-benar dipakai di pabrik. Setelah alur inti stabil, sistem dapat dikembangkan menjadi platform MES yang lebih lengkap.
 
-The most important principle is:
+Prinsip terpenting adalah:
 
-> **Build the workflow that the factory will actually use.  
-> Then improve it step by step.**
+> **Bangun alur kerja yang benar-benar dipakai pabrik.  
+> Setelah itu, tingkatkan secara bertahap.**
 
 ---
 
-## 25. Appendix — Suggested First Implementation Order
+## 25. Lampiran — Urutan Implementasi Awal yang Disarankan
 
-1. Login and role access
-2. Machine master
-3. Work Order master
-4. Dashboard machine tiles
-5. Machine detail page
-6. Production input
-7. Reject input
-8. Downtime input
-9. Material transaction input
-10. Reports
-11. Real-time refresh
-12. Hardening and deployment
+1. Login dan akses role
+2. Master mesin
+3. Master Work Order
+4. Tile dashboard mesin
+5. Halaman detail mesin
+6. Input produksi
+7. Input reject
+8. Input downtime
+9. Input transaksi material
+10. Report
+11. Refresh real-time
+12. Hardening dan deployment
